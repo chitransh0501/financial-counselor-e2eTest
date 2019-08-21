@@ -12,7 +12,7 @@ export class HomePage extends AppPage {
     }
 
     get startButton() {
-        return element(by.xpath("//a[@class='btn btn-dark']"));
+        return element(by.xpath("//a[text()='Tell me my financial wellbeing']"));
     }
 
     get header() {

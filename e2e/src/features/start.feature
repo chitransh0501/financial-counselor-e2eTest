@@ -8,4 +8,4 @@ Feature: verify all the scenarios related to start page
         And   heading is avaiable on Start Page
         And   start button is available on Start Page
         And   header is available on Start Page
-        And   Clicking start button takes user to the "DemographicsSurvey" page.
+        And   Clicking start button on Start page takes user to the "DemographicsSurvey" page

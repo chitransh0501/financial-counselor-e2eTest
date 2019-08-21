@@ -35,9 +35,9 @@ Then(/^header is available on Start Page$/, async () => {
      return expect(await startPage.header.isPresent()).to.be.true;
 });
 
-Then(/^Clicking start button takes user to the  \"([^\"]*)\" page.$/, async (page) => {
+Then(/^Clicking start button on Start page takes user to the \"([^\"]*)\" page$/, async (page) => {
      await startPage.clickOnStartTestBtn();
-     let baseUrl = "";
-     let expectedUrl = baseUrl + page;
-     return expect(await startPage.currentUrl()).to.equal(expectedUrl);
+     let baseUrl = "http://localhost:3001";
+     let expectedUrl = baseUrl + PageUrl[page];
+     return expect(await appPage.currentUrl()).to.equal(expectedUrl);
 });
