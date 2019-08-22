@@ -12,15 +12,15 @@ Feature: Tests for Demographics page.
                 Then Submit the form
                 Then Verify that form is submitted successfully and navidated to the welness survey page
 
-        # Scenario: Verify that user is not able to fill the form without selecting checkbox.
-        #         Given  Fill "name" ,"contact" , "age", "gender" ,"sal", "investment" "surplus", "pincode"
-        #         Then Keep checkbox unselected
-        #         Then Verify that submit button is disabled
+# Scenario: Verify that user is not able to fill the form without selecting checkbox.
+#         Given  Fill "name" ,"contact" , "age", "gender" ,"sal", "investment" "surplus", "pincode"
+#         Then Keep checkbox unselected
+#         Then Verify that submit button is disabled
 
-        # Scenario: Verify that user is not able to fill the form without filling complete form.
-        #         Given  Fill "name" ,"contact" , "age", "gender" ,"sal", "investment"
-        #         Then   select the checkbox
-        #         Then Verify that submit button is disabled
+# Scenario: Verify that user is not able to fill the form without filling complete form.
+#         Given  Fill "name" ,"contact" , "age", "gender" ,"sal", "investment"
+#         Then   select the checkbox
+#         Then Verify that submit button is disabled
 
 
 

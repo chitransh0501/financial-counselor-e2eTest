@@ -3,7 +3,7 @@ Feature: verify all the scenarios related to start page
 
     Scenario:verify start page whether start button, content and heading available.
 
-        Given Launch the "StartPage" URL
+        Given Launch the start page "StartPage" URL
         Then  content is available on Start Page
         And   heading is avaiable on Start Page
         And   start button is available on Start Page

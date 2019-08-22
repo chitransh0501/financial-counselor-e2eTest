@@ -20,6 +20,7 @@ export class StartPage extends AppPage {
     }
 
     clickOnStartTestBtn() {
-        return this.startTestBtn.click();
-    }
+       return  this.startTestBtn.click();
+        }
+
 }

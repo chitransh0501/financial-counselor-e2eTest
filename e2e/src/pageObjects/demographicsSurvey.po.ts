@@ -38,33 +38,33 @@ export class DemographicsSurvey extends AppPage {
     }
 
     enterEmail(email) {
-        return this.email.sendKeys(email);
+        this.email.sendKeys(email);
     }
 
     enterContact(contact) {
-        return this.contact.sendKeys(contact);
+        this.contact.sendKeys(contact);
     }
 
     enterAge(age) {
-        return this.age.sendKeys(age);
+        this.age.sendKeys(age);
     }
 
     selectInvestmentSurplus(investmentSurplusPercent) {
-        return this.selectSlider(this.investmentSurplus, investmentSurplusPercent);
+        this.selectSlider(this.investmentSurplus, investmentSurplusPercent);
     }
     enterPinCode(pincode) {
-        return this.pincode.sendKeys(pincode);
+        this.pincode.sendKeys(pincode);
     }
 
     selectAcceptanceCheckBox() {
-            this.acceptanceCheckBox.click();
+        this.acceptanceCheckBox.click();
     }
 
     selectGender(genderDropDown, gender) {
         this.selectOptionFromDropDown(genderDropDown, gender);
     }
 
-    selectSal(salDropDown :String, sal : String) {
+    selectSal(salDropDown: String, sal: String) {
         this.selectOptionFromDropDown(salDropDown, sal);
     }
 

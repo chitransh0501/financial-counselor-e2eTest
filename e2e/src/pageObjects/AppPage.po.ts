@@ -1,14 +1,14 @@
 import { browser, by, element, ExpectedConditions, ElementFinder } from "protractor";
 export class AppPage {
 
-    constructor () {
+    constructor() {
         browser.manage().timeouts().implicitlyWait(30000);
     }
 
     explicitWait(elementLocator: ElementFinder) {
         let EC = ExpectedConditions;
         let condition = EC.presenceOf(elementLocator);
-        return browser.wait(condition, 30000);
+        browser.wait(condition, 30000);
     }
 
     openUrl(url) {
@@ -36,14 +36,13 @@ export class AppPage {
     }
 
     selectOptionFromDropDown(dropdown: String, option: String) {
-       // this.explicitWait(element(by.xpath("//select[@name= '" + dropdown + "']")));
+        // this.explicitWait(element(by.xpath("//select[@name= '" + dropdown + "']")));
         element(by.xpath("//select[@name= '" + dropdown + "']")).click();
-       // this.explicitWait(element(by.xpath("//option[text()= '" + option + "']")));
+        // this.explicitWait(element(by.xpath("//option[text()= '" + option + "']")));
         element(by.xpath("//option[text()= '" + option + "']")).click();
     }
 
-    selectSlider(sliderElement : ElementFinder, investmentSurplusPercent : String) {
-
-       browser.actions().dragAndDrop(sliderElement, { x: 200, y: 0 }).perform();
+    selectSlider(sliderElement: ElementFinder, investmentSurplusPercent: String) {
+        browser.actions().dragAndDrop(sliderElement, { x: 200, y: 0 }).perform();
     }
 }

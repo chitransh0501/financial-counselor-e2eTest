@@ -18,26 +18,31 @@ Before(() => {
      startPage = new StartPage();
 });
 
+Given(/^Launch the start page \"([^\"]*)\" URL$/, async (string) => {
+     let url = PageUrl[string];
+     browser.ignoreSynchronization = true;
+     await startPage.openUrl(url);
+});
 
 Given(/^content is available on Start Page$/, async () => {
-     return expect(await startPage.content.isPresent()).to.be.true;
+     expect(await startPage.content.isPresent()).to.be.true;
 });
 
 Then(/^heading is avaiable on Start Page$/, async () => {
-     return expect(await startPage.heading.isDisplayed()).to.be.true;
+     expect(await startPage.heading.isDisplayed()).to.be.true;
 });
 
 Then(/^start button is available on Start Page$/, async () => {
-     return expect(await startPage.startTestBtn.isEnabled()).to.be.true;
+     expect(await startPage.startTestBtn.isEnabled()).to.be.true;
 });
 
 Then(/^header is available on Start Page$/, async () => {
-     return expect(await startPage.header.isPresent()).to.be.true;
+     expect(await startPage.header.isPresent()).to.be.true;
 });
 
 Then(/^Clicking start button on Start page takes user to the \"([^\"]*)\" page$/, async (page) => {
      await startPage.clickOnStartTestBtn();
      let baseUrl = "http://localhost:3001";
      let expectedUrl = baseUrl + PageUrl[page];
-     return expect(await appPage.currentUrl()).to.equal(expectedUrl);
+     expect(await appPage.currentUrl()).to.equal(expectedUrl);
 });
