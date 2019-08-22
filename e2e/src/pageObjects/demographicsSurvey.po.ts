@@ -4,8 +4,8 @@ import { element, by, browser } from "protractor";
 
 export class DemographicsSurvey extends AppPage {
 
-    get heading() {
-        return element(by.xpath("//div[@class='col app-v-home__content-heading']"));
+    get header() {
+        return element(by.xpath("//a[text()='Getting Started']"));
     }
 
     get email() {
@@ -19,10 +19,10 @@ export class DemographicsSurvey extends AppPage {
         return element(by.id("age"));
     }
     get gender() {
-        return element(by.name("gender"));
+        return element(by.xpath("//select[@name='gender']"));
     }
     get yearlySalary() {
-        return element(by.name("salary"));
+        return element(by.xpath("//select[@name='salary']"));
     }
     get investmentSurplus() {
         return element(by.name("investmentSurplus"));
@@ -34,10 +34,10 @@ export class DemographicsSurvey extends AppPage {
         return element(by.id("acceptTnC"));
     }
     get submitBtn() {
-        return element(by.xpath("//button[text()='Submit']"));
+        return element(by.css("button[type=submit]"));
     }
 
-    eneterEmail(email) {
+    enterEmail(email) {
         return this.email.sendKeys(email);
     }
 
@@ -49,29 +49,27 @@ export class DemographicsSurvey extends AppPage {
         return this.age.sendKeys(age);
     }
 
-    selectGender(gender) {
-        return this.gender.$('[value = "gender"]').click();
-    }
-
-    selectInvestmentSurplus(percentage) {
-        return browser.actions().dragAndDrop(this.investmentSurplus, { x: 100, y: percentage }).perform();
+    selectInvestmentSurplus(investmentSurplusPercent) {
+        return this.selectSlider(this.investmentSurplus, investmentSurplusPercent);
     }
     enterPinCode(pincode) {
         return this.pincode.sendKeys(pincode);
     }
-    selectYearlySal(sal) {
-        return this.yearlySalary.$('[value = "sal"]').click();
-    }
+
     selectAcceptanceCheckBox() {
-        let checkBoxStatus = function checkBoxStatus() {
-            return this.acceptanceCheckBox.isSelected();
-        }
-        if (checkBoxStatus.name != 'true') {
             this.acceptanceCheckBox.click();
-        }
+    }
+
+    selectGender(genderDropDown, gender) {
+        this.selectOptionFromDropDown(genderDropDown, gender);
+    }
+
+    selectSal(salDropDown :String, sal : String) {
+        this.selectOptionFromDropDown(salDropDown, sal);
     }
 
     submitForm() {
+        this.submitBtn.click();
         this.submitBtn.click();
     }
 }
